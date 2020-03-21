@@ -9,7 +9,7 @@ import os
 
 TOKEN = '1027411203:AAEuKTaCQLPDkzBh6o3L0vfe9nrOcoE9_HY'
 api = NewsApiClient(api_key='cbd9310b8e8e4159ac00599c29e6e6d0')
-PORT = int(os.environ.get('PORT', '8443'))
+# PORT = int(os.environ.get('PORT', '8443'))
 updater = Updater(TOKEN, use_context=True)
 MENU, CHOOSE_NEWS, CHOOSE_SOURCES1, CHOOSE_SOURCES2 = range(4)
 # article_num = []
@@ -367,8 +367,8 @@ def main():
     )
     dispatcher.add_handler(conv_handler)
 
-    # updater.start_polling()
-    updater.bot.set_webhook("https://thawing-reef-95123.herokuapp.com/ " + TOKEN)
+    updater.start_polling()
+    # updater.bot.set_webhook("https://thawing-reef-95123.herokuapp.com/ " + TOKEN)
     updater.idle()
 
 
